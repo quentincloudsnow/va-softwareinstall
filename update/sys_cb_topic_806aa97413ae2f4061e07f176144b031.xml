@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <connect_queue/>
+        <description/>
+        <graph>{
+  "graph_api_version": "1.0.3",
+  "goals": {
+    "863a1879724b40cd8db337667cefeb64": {
+      "id": "863a1879724b40cd8db337667cefeb64",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "2ad6fab7c8c943ddb9f73852199adede": {
+          "id": "2ad6fab7c8c943ddb9f73852199adede",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "value": "alright, let me help you with your software request",
+            "mode": "simple"
+          }
+        },
+        "38e0615e03ee4cc0800c6614abebed31": {
+          "id": "38e0615e03ee4cc0800c6614abebed31",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "35c21a00dbce4ef0a47beecc70a57a5e": {
+          "id": "35c21a00dbce4ef0a47beecc70a57a5e",
+          "stepType": "Prompt",
+          "name": "software_term",
+          "prompt": {
+            "value": "Please type the name of the software you need to install",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": "",
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "4b6ed2d5be31487685d41d19f2f9cc2d"
+        },
+        "bedf98a3312c42438e9fc3bc0c44b317": {
+          "id": "bedf98a3312c42438e9fc3bc0c44b317",
+          "name": "software result",
+          "script": "(function execute() {\n    // reset to first page\n    vaVars.index = 0;\n\n    function getNumberOfsoftware() {\n        // count how many outages there are\n        var count = 0;\n        var gr = new GlideAggregate('x_snc_va_software_software_deployment_req');\n        gr.addQuery('product_name', 'CONTAINS', vaInputs.software_term);\n        gr.addAggregate('COUNT');\n        gr.query();\n        if (gr.next())\n            count = gr.getAggregate('COUNT');\n\n        return count;\n    }    \n\n    // set count variable\n    vaVars.count = getNumberOfsoftware();\n})()\n",
+          "stepType": "ScriptAction",
+          "applicability": ""
+        },
+        "53b0111951e34f17beae816b1b46ed33": {
+          "id": "53b0111951e34f17beae816b1b46ed33",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "db9da2dfae5347138bd3fbc29f760711": {
+          "id": "db9da2dfae5347138bd3fbc29f760711",
+          "stepType": "TextOutput",
+          "name": "onefound",
+          "value": {
+            "value": "I found one software that matches your request:",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "e4e09be5e8b54a96a69f0449766c4875": {
+          "id": "e4e09be5e8b54a96a69f0449766c4875",
+          "stepType": "TextOutput",
+          "name": "Notfound",
+          "value": {
+            "value": "No Software found",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "217435eddad349e0a79c8682df54983e": {
+          "id": "217435eddad349e0a79c8682df54983e",
+          "stepType": "TextOutput",
+          "name": "multiplefound",
+          "value": {
+            "value": "Muliple Found",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "f3875933907440f5ac0577a3e7765f91": {
+          "id": "f3875933907440f5ac0577a3e7765f91",
+          "stepType": "TextOutput",
+          "name": "singlessoft",
+          "value": {
+            "value": "(function execute() {\n    // query current and future planned outages \n    var gr = new GlideRecord('x_snc_va_software_software_deployment_req');\n    gr.addQuery('product_name', 'CONTAINS', vaInputs.software_term);\n    gr.query();\n\n    if (gr.next()) {\n        vaVars.approvalrequired = gr.approval_required\n        vaVars.ADGroup = gr.ad_group\n    }\n    \n    var msg = gr.editor + \" \" + gr.product_name + \" \" + gr.version + \" \" + gr.edition;\n\n    return msg;\n})()",
+            "mode": "script"
+          },
+          "applicability": ""
+        },
+        "2115428b2f734048aa20854ed78cbaf9": {
+          "id": "2115428b2f734048aa20854ed78cbaf9",
+          "stepType": "LookupRecord",
+          "name": "getsoftrecord",
+          "script": "(function execute(table) {\n  \n       \n       var gr = new GlideRecord(table);\n       gr.addQuery('product_name', 'CONTAINS', vaInputs.software_term);\n       gr.query();\n       if(gr.next()) {\n          return gr;\n    }\n    \n})(table)\n",
+          "applicability": "",
+          "variableId": "9b52132e76bd4a58afc7d02d10bcb42c"
+        },
+        "2520f1b05f4940a3bb4e149fb9d85f00": {
+          "id": "2520f1b05f4940a3bb4e149fb9d85f00",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "9a709b117b8448fb9aacb4415e4ff5ce": {
+          "id": "9a709b117b8448fb9aacb4415e4ff5ce",
+          "stepType": "Prompt",
+          "name": "installyesno",
+          "prompt": {
+            "value": "Do you want to install it?",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": "",
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "72278b0621d74d41ad5a1b3ed47c5098"
+        },
+        "68710a4098d441b98b25ab82c9d48e08": {
+          "id": "68710a4098d441b98b25ab82c9d48e08",
+          "stepType": "HtmlOutput",
+          "name": "redirecttomysoftware",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n &lt;div&gt;&amp;nbsp;This is part of Deloitte approved software, you can insall it directly from mySoftware:&lt;/div&gt;  \n&lt;ul style=\"list-style-position: inside;\"&gt;\n&lt;li&gt;&lt;a title=\"http://mysoftware/CMApplicationCatalog/#/SoftwareLibrary/AppListPageView.xaml\" href=\"http://mysoftware/CMApplicationCatalog/#/SoftwareLibrary/AppListPageView.xaml\" target=\"_blank\" rel=\"nofollow\"&gt;http://mysoftware/CMApplicationCatalog/#/SoftwareLibrary/AppListPageView.xaml&lt;/a&gt;&amp;nbsp;or&lt;a href=\"http://mysoftware/CMApplicationCatalog/#/SoftwareLibrary/AppListPageView.xaml\" rel=\"nofollow\"&gt;&lt;br /&gt;&lt;br /&gt;&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;Go to Start &amp;gt; Deloitte Shortcuts &amp;gt; mySoftware&lt;/li&gt;\n&lt;/ul&gt;\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "0a14d8d44f3d4d19bb55effa988f7f2f": {
+          "id": "0a14d8d44f3d4d19bb55effa988f7f2f",
+          "stepType": "Prompt",
+          "name": "confirmselection",
+          "prompt": {
+            "value": "This software requires approval and WBS Code, do you still want to request it?",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": "",
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "e0968d5fb1544e639c2b7f397fdafb42"
+        },
+        "587aeb16d3554a9092a68c624c1ea6e9": {
+          "stepType": "ChoicePrompt",
+          "name": "wbscode",
+          "prompt": {
+            "value": "Please select the WBS Code",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": "",
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "92f113c521e74467bad97120cf453cc8",
+          "id": "587aeb16d3554a9092a68c624c1ea6e9"
+        },
+        "1b01ed1b6e4b49d6be2a5341840193ba": {
+          "id": "1b01ed1b6e4b49d6be2a5341840193ba",
+          "stepType": "CrudAction",
+          "name": "create request",
+          "template": "parent_interaction={{create_interaction_record}}^short_description=Install Software {{getsoftrecord.product_name}}  {{getsoftrecord.version}}  {{getsoftrecord.edition}}^requested_for={{user}}^description={{getsoftrecord.ad_group}}^special_instructions={{user.user_name}}{{user}}^EQ",
+          "mode": "create",
+          "record": "",
+          "applicability": "",
+          "variableId": "a5482c2194bc489da26d74120bc08f17"
+        },
+        "9629946a93dd4dce9e8eea6ccdb20548": {
+          "id": "9629946a93dd4dce9e8eea6ccdb20548",
+          "stepType": "CrudAction",
+          "name": "Create Interaction Record",
+          "template": "short_description=Request Software installation for {{software_term}}^state=new^opened_for={{user}}^EQ",
+          "mode": "create",
+          "record": "",
+          "applicability": "",
+          "variableId": "b5cb0748f28e4d6ebac9ced350a7f0bf"
+        }
+      },
+      "edges": [
+        {
+          "id": "29821b72c82647e7a196a8bd65205736",
+          "edgeType": "Edge",
+          "source": "1b01ed1b6e4b49d6be2a5341840193ba",
+          "target": "38e0615e03ee4cc0800c6614abebed31",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "689b094ef8654861911f9861f2eb7584",
+          "edgeType": "Edge",
+          "source": "9a709b117b8448fb9aacb4415e4ff5ce",
+          "target": "38e0615e03ee4cc0800c6614abebed31",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "6436df2c62cb48c89492ee55e504a825",
+          "edgeType": "Edge",
+          "source": "2ad6fab7c8c943ddb9f73852199adede",
+          "target": "35c21a00dbce4ef0a47beecc70a57a5e",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "588685c89a0d49e0b9a190e2d674b890",
+          "edgeType": "Edge",
+          "source": "bedf98a3312c42438e9fc3bc0c44b317",
+          "target": "53b0111951e34f17beae816b1b46ed33",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "f251fd1e22d440e9a7451d22d3efc2ee",
+          "edgeType": "Branch",
+          "source": "53b0111951e34f17beae816b1b46ed33",
+          "target": "db9da2dfae5347138bd3fbc29f760711",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\n    return vaVars.count == 1;\n})()\n",
+          "label": "One Software Found"
+        },
+        {
+          "id": "007184f684de4f30958c5793e0686492",
+          "edgeType": "Branch",
+          "source": "53b0111951e34f17beae816b1b46ed33",
+          "target": "e4e09be5e8b54a96a69f0449766c4875",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\n    return vaVars.count == 0;\n})()\n",
+          "label": "Software Not Found"
+        },
+        {
+          "id": "2dc814352be24986a6c3fee702b29b84",
+          "edgeType": "Edge",
+          "source": "e4e09be5e8b54a96a69f0449766c4875",
+          "target": "38e0615e03ee4cc0800c6614abebed31",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "0ceed329d4af441fb16023598b9a6e55",
+          "edgeType": "Branch",
+          "source": "53b0111951e34f17beae816b1b46ed33",
+          "target": "217435eddad349e0a79c8682df54983e",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\n    return vaVars.count &gt; 1;\n    var msg = \"You have exactly one application service in critical state.\";\n    return msg;\n})()\n",
+          "label": "Multiple Software found"
+        },
+        {
+          "id": "432f0b7b5ef24273b11b2937d80156c1",
+          "edgeType": "Edge",
+          "source": "217435eddad349e0a79c8682df54983e",
+          "target": "38e0615e03ee4cc0800c6614abebed31",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "aa580317405f495ca498c756fc4a46fb",
+          "edgeType": "Edge",
+          "source": "db9da2dfae5347138bd3fbc29f760711",
+          "target": "f3875933907440f5ac0577a3e7765f91",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "28a91fa447bf4ce3955a8ea22cb80d14",
+          "edgeType": "Edge",
+          "source": "f3875933907440f5ac0577a3e7765f91",
+          "target": "2115428b2f734048aa20854ed78cbaf9",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "56d277c052e047a0a1bc3f830c32f566",
+          "edgeType": "Edge",
+          "source": "2115428b2f734048aa20854ed78cbaf9",
+          "target": "2520f1b05f4940a3bb4e149fb9d85f00",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "2a102bae428c4d63a10919aeabed0afe",
+          "edgeType": "Branch",
+          "source": "2520f1b05f4940a3bb4e149fb9d85f00",
+          "target": "68710a4098d441b98b25ab82c9d48e08",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\n    if(vaVars.approvalrequired == 'false')\n{\n        return true;\n    }\n})()",
+          "label": "No Approval Required"
+        },
+        {
+          "id": "d979b9740dc3443faf435cef7ec51402",
+          "edgeType": "Edge",
+          "source": "68710a4098d441b98b25ab82c9d48e08",
+          "target": "9a709b117b8448fb9aacb4415e4ff5ce",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "ac8fa0a09f7f4c9c8b3b1fd04dfd3769",
+          "edgeType": "Branch",
+          "source": "2520f1b05f4940a3bb4e149fb9d85f00",
+          "target": "0a14d8d44f3d4d19bb55effa988f7f2f",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\n    if(vaVars.approvalrequired == 'true')\n{\n        return true;\n    }\n})()",
+          "label": "Requires Approval"
+        },
+        {
+          "id": "fc152abe18434ff8b39b66c0d7b9ceb7",
+          "edgeType": "Edge",
+          "source": "0a14d8d44f3d4d19bb55effa988f7f2f",
+          "target": "587aeb16d3554a9092a68c624c1ea6e9",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "072052d06d624667a34d7efeb5a8b49e",
+          "edgeType": "Edge",
+          "source": "587aeb16d3554a9092a68c624c1ea6e9",
+          "target": "1b01ed1b6e4b49d6be2a5341840193ba",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "12da5a33cd3440bf96be783dccc59db1",
+          "edgeType": "Edge",
+          "source": "35c21a00dbce4ef0a47beecc70a57a5e",
+          "target": "9629946a93dd4dce9e8eea6ccdb20548",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "0d207cf4de3b4dbd95e0f1d6e01aa086",
+          "edgeType": "Edge",
+          "source": "9629946a93dd4dce9e8eea6ccdb20548",
+          "target": "bedf98a3312c42438e9fc3bc0c44b317",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "4b6ed2d5be31487685d41d19f2f9cc2d": {
+      "id": "4b6ed2d5be31487685d41d19f2f9cc2d",
+      "name": "software_term",
+      "label": "Software_term",
+      "varType": "string"
+    },
+    "888ce160d2484a89a6fafdd3d4f74930": {
+      "id": "888ce160d2484a89a6fafdd3d4f74930",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "count",
+      "label": "count",
+      "varType": "script"
+    },
+    "72278b0621d74d41ad5a1b3ed47c5098": {
+      "id": "72278b0621d74d41ad5a1b3ed47c5098",
+      "name": "installyesno",
+      "label": "Installyesno",
+      "varType": "boolean"
+    },
+    "9b52132e76bd4a58afc7d02d10bcb42c": {
+      "id": "9b52132e76bd4a58afc7d02d10bcb42c",
+      "name": "getsoftrecord",
+      "label": "Getsoftrecord",
+      "varType": "reference",
+      "table": "x_snc_va_software_software_deployment_req"
+    },
+    "17631b141ad64f62b8e2bcf787d08505": {
+      "id": "17631b141ad64f62b8e2bcf787d08505",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "approvalrequired",
+      "label": "approvalrequired",
+      "varType": "script"
+    },
+    "e0968d5fb1544e639c2b7f397fdafb42": {
+      "id": "e0968d5fb1544e639c2b7f397fdafb42",
+      "name": "confirmselection",
+      "label": "Confirmselection",
+      "varType": "boolean"
+    },
+    "92f113c521e74467bad97120cf453cc8": {
+      "id": "92f113c521e74467bad97120cf453cc8",
+      "name": "wbscode",
+      "label": "Wbscode",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "WBS-17IT0001-SWFT-0001",
+          "value": "WBS-17IT0001-SWFT-0001"
+        },
+        {
+          "label": "WBS-17IT0002-PAUD-0001-OP-03",
+          "value": "17IT0002-PAUD-0001-OP-03"
+        },
+        {
+          "label": "WBS-17IT0003-PAUD-0001-O",
+          "value": "17IT0002-PAUD-0001-OP-03"
+        },
+        {
+          "label": "WBS-17IT0004-PAUD-0001-O",
+          "value": "17IT0002-PAUD-0001-OP-03"
+        }
+      ]
+    },
+    "a5482c2194bc489da26d74120bc08f17": {
+      "id": "a5482c2194bc489da26d74120bc08f17",
+      "name": "create_request",
+      "label": "create_request",
+      "varType": "reference",
+      "table": "sc_request",
+      "inactive": false
+    },
+    "b5cb0748f28e4d6ebac9ced350a7f0bf": {
+      "id": "b5cb0748f28e4d6ebac9ced350a7f0bf",
+      "name": "create_interaction_record",
+      "label": "create_interaction_record",
+      "varType": "reference",
+      "table": "interaction",
+      "inactive": false
+    },
+    "a3cb4a0d3d9c472b8d03e2d72c7a63fb": {
+      "id": "a3cb4a0d3d9c472b8d03e2d72c7a63fb",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "ADGroup",
+      "label": "ADGroup",
+      "varType": "script"
+    }
+  }
+}</graph>
+        <key_phrases>Install a software,visio,project,microsoft visio,microsoft project</key_phrases>
+        <live_agent>false</live_agent>
+        <name>Install a software</name>
+        <roles/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>quentin.carton</sys_created_by>
+        <sys_created_on>2018-12-20 16:53:20</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>806aa97413ae2f4061e07f176144b031</sys_id>
+        <sys_mod_count>52</sys_mod_count>
+        <sys_name>Install a software</sys_name>
+        <sys_package display_value="va software deployment" source="x_snc_va_software">5048e17013ae2f4061e07f176144b005</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="va software deployment">5048e17013ae2f4061e07f176144b005</sys_scope>
+        <sys_update_name>sys_cb_topic_806aa97413ae2f4061e07f176144b031</sys_update_name>
+        <sys_updated_by>quentin.carton</sys_updated_by>
+        <sys_updated_on>2018-12-21 19:48:14</sys_updated_on>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=806aa97413ae2f4061e07f176144b031"/>
+</record_update>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_hub_action_instance">
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Create Catalog Task">af51fd0e73141300612c273ffff6a785</action_type>
+        <action_type_parent display_value="Create Catalog Task">f597c41073081300612c273ffff6a767</action_type_parent>
+        <comment/>
+        <compiled_snapshot display_value="Create Catalog Task">af51fd0e73141300612c273ffff6a785</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Deloitte - VA - Create and  fullfil request">1dc8b27013266f4061e07f176144b05f</flow>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>quentin.carton</sys_created_by>
+        <sys_created_on>2018-12-20 22:35:51</sys_created_on>
+        <sys_id>e1c8b27013266f4061e07f176144b0dc</sys_id>
+        <sys_mod_count>22</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="va software deployment" source="x_snc_va_software">5048e17013ae2f4061e07f176144b005</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="va software deployment">5048e17013ae2f4061e07f176144b005</sys_scope>
+        <sys_update_name>sys_hub_action_instance_e1c8b27013266f4061e07f176144b0dc</sys_update_name>
+        <sys_updated_by>quentin.carton</sys_updated_by>
+        <sys_updated_on>2018-12-21 19:42:44</sys_updated_on>
+        <ui_id>dbede670-2cda-4d90-a975-92099b9c888b</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=e1c8b27013266f4061e07f176144b0dc"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>e1c8b27013266f4061e07f176144b0dc</document_key>
+        <order>5</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>quentin.carton</sys_created_by>
+        <sys_created_on>2018-12-20 22:35:52</sys_created_on>
+        <sys_id>35c8b27013266f4061e07f176144b0e3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>quentin.carton</sys_updated_by>
+        <sys_updated_on>2018-12-20 22:35:52</sys_updated_on>
+        <value>98082abc13a26f4061e07f176144b0c2</value>
+        <variable display_value="">f751fd0e73141300612c273ffff6a7b8</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>e1c8b27013266f4061e07f176144b0dc</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>quentin.carton</sys_created_by>
+        <sys_created_on>2018-12-20 22:35:52</sys_created_on>
+        <sys_id>71c8b27013266f4061e07f176144b0e3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>quentin.carton</sys_updated_by>
+        <sys_updated_on>2018-12-21 19:42:43</sys_updated_on>
+        <value>Install Software - Add User to AD Group</value>
+        <variable display_value="">3751fd0e73141300612c273ffff6a7a6</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>e1c8b27013266f4061e07f176144b0dc</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>quentin.carton</sys_created_by>
+        <sys_created_on>2018-12-20 22:35:52</sys_created_on>
+        <sys_id>b9c8b27013266f4061e07f176144b0e3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>quentin.carton</sys_updated_by>
+        <sys_updated_on>2018-12-21 15:50:38</sys_updated_on>
+        <value/>
+        <variable display_value="">7751fd0e73141300612c273ffff6a7ac</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>e1c8b27013266f4061e07f176144b0dc</document_key>
+        <order>6</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>quentin.carton</sys_created_by>
+        <sys_created_on>2018-12-20 22:35:52</sys_created_on>
+        <sys_id>bdc8b27013266f4061e07f176144b0e2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>quentin.carton</sys_updated_by>
+        <sys_updated_on>2018-12-20 22:35:52</sys_updated_on>
+        <value>b4d9ea3013e26f4061e07f176144b0d5,6a99263013e26f4061e07f176144b0d6</value>
+        <variable display_value="">7b51fd0e73141300612c273ffff6a7be</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>e1c8b27013266f4061e07f176144b0dc</document_key>
+        <order>4</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>quentin.carton</sys_created_by>
+        <sys_created_on>2018-12-20 22:35:52</sys_created_on>
+        <sys_id>f5c8b27013266f4061e07f176144b0e3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>quentin.carton</sys_updated_by>
+        <sys_updated_on>2018-12-20 22:35:52</sys_updated_on>
+        <value>0</value>
+        <variable display_value="">f751fd0e73141300612c273ffff6a7b2</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=e1c8b27013266f4061e07f176144b0dc"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_fields</field>
+        <id>e1c8b27013266f4061e07f176144b0dc</id>
+        <sys_created_by>quentin.carton</sys_created_by>
+        <sys_created_on>2018-12-20 22:35:52</sys_created_on>
+        <sys_id>3dc8b27013266f4061e07f176144b0e2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>quentin.carton</sys_updated_by>
+        <sys_updated_on>2018-12-20 22:35:52</sys_updated_on>
+        <table>var__m_sys_hub_action_input_af51fd0e73141300612c273ffff6a785</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_requested_item</field>
+        <id>e1c8b27013266f4061e07f176144b0dc</id>
+        <sys_created_by>quentin.carton</sys_created_by>
+        <sys_created_on>2018-12-20 22:35:52</sys_created_on>
+        <sys_id>e1c8b27013266f4061e07f176144b0e2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>quentin.carton</sys_updated_by>
+        <sys_updated_on>2018-12-20 22:35:52</sys_updated_on>
+        <table>var__m_sys_hub_action_input_af51fd0e73141300612c273ffff6a785</table>
+        <value>{{35fa263f-a68d-48ed-8614-ba7b6d58b4d7.record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_short_description</field>
+        <id>e1c8b27013266f4061e07f176144b0dc</id>
+        <sys_created_by>quentin.carton</sys_created_by>
+        <sys_created_on>2018-12-20 22:35:51</sys_created_on>
+        <sys_id>21c8b27013266f4061e07f176144b0e2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>quentin.carton</sys_updated_by>
+        <sys_updated_on>2018-12-20 22:35:51</sys_updated_on>
+        <table>var__m_sys_hub_action_input_af51fd0e73141300612c273ffff6a785</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_wait</field>
+        <id>e1c8b27013266f4061e07f176144b0dc</id>
+        <sys_created_by>quentin.carton</sys_created_by>
+        <sys_created_on>2018-12-20 22:35:52</sys_created_on>
+        <sys_id>79c8b27013266f4061e07f176144b0e2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>quentin.carton</sys_updated_by>
+        <sys_updated_on>2018-12-20 22:35:52</sys_updated_on>
+        <table>var__m_sys_hub_action_input_af51fd0e73141300612c273ffff6a785</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>catalog_variables</field>
+        <id>e1c8b27013266f4061e07f176144b0dc</id>
+        <sys_created_by>quentin.carton</sys_created_by>
+        <sys_created_on>2018-12-20 22:35:51</sys_created_on>
+        <sys_id>6dc8b27013266f4061e07f176144b0e1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>quentin.carton</sys_updated_by>
+        <sys_updated_on>2018-12-20 22:35:51</sys_updated_on>
+        <table>var__m_sys_hub_action_input_af51fd0e73141300612c273ffff6a785</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>template_catalog_item</field>
+        <id>e1c8b27013266f4061e07f176144b0dc</id>
+        <sys_created_by>quentin.carton</sys_created_by>
+        <sys_created_on>2018-12-20 22:35:52</sys_created_on>
+        <sys_id>b5c8b27013266f4061e07f176144b0e2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>quentin.carton</sys_updated_by>
+        <sys_updated_on>2018-12-20 22:35:52</sys_updated_on>
+        <table>var__m_sys_hub_action_input_af51fd0e73141300612c273ffff6a785</table>
+        <value/>
+    </sys_element_mapping>
+</record_update>

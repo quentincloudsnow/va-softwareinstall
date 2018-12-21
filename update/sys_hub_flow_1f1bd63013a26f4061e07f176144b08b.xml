@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <annotation/>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <internal_name>add_ad_user_to_group</internal_name>
+        <label_cache>[{"name":"Service Catalog_1.request_item.short_description","label":"Trigger➛Requested Item Record➛Short description","reference":"","reference_display":"Short description","type":"string","base_type":"string","parent_table_name":"sc_req_item","column_name":"short_description"},{"name":"Service Catalog_1.request_item","label":"Trigger➛Requested Item Record","reference":"sc_req_item","reference_display":"Requested Item","type":"reference","base_type":"reference"},{"name":"c35c216f-5763-4669-9191-085647c62772.Catalog Task","label":"1➛Catalog Task","reference":"sc_task","reference_display":"Catalog Task","type":"document_id","base_type":"document_id"},{"name":"c22980cb-6ed1-41f7-a29f-1b83f7450a90.Table","label":"2➛Table","reference_display":"Table","type":"table_name","base_type":"table_name"},{"name":"c22980cb-6ed1-41f7-a29f-1b83f7450a90.Record","label":"2➛Record","reference":"task","reference_display":"Task","type":"document_id","base_type":"document_id"},{"name":"0df16d79-642c-4b0b-bc3a-4dc1b7554af4.Status","label":"1➛Error Code","reference_display":"Error Code","type":"choice","base_type":"choice"},{"name":"c27deafe-ffbe-4470-8214-b8bbc4ef9843.Error Message","label":"1➛Error Message","reference_display":"Error Message","type":"string","base_type":"string"},{"name":"61287c93-fe36-4b6f-8f20-7e2e9efda53a.Status","label":"1➛Status","reference_display":"Status","type":"choice","base_type":"choice"},{"name":"61287c93-fe36-4b6f-8f20-7e2e9efda53a.Error Message","label":"1➛Error Message","reference_display":"Error Message","type":"string","base_type":"string"},{"name":"61287c93-fe36-4b6f-8f20-7e2e9efda53a.User GUID","label":"1➛User GUID","reference_display":"User GUID","type":"string","base_type":"string"},{"name":"0df16d79-642c-4b0b-bc3a-4dc1b7554af4.Error Message","label":"1➛Error Message","reference_display":"Error Message","type":"string","base_type":"string"}]</label_cache>
+        <latest_snapshot>431d2e45136aef403c92f8fed144b08f</latest_snapshot>
+        <master_snapshot>cd86ea3c13a26f4061e07f176144b087</master_snapshot>
+        <name>Deloitte - Add AD user to group</name>
+        <outputs/>
+        <remote_trigger_id>25862e3c13a26f4061e07f176144b00c</remote_trigger_id>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>quentin.carton</sys_created_by>
+        <sys_created_on>2018-12-20 20:26:15</sys_created_on>
+        <sys_id>1f1bd63013a26f4061e07f176144b08b</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>Deloitte - Add AD user to group</sys_name>
+        <sys_package display_value="va software deployment" source="x_snc_va_software">5048e17013ae2f4061e07f176144b005</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="va software deployment">5048e17013ae2f4061e07f176144b005</sys_scope>
+        <sys_update_name>sys_hub_flow_1f1bd63013a26f4061e07f176144b08b</sys_update_name>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2018-12-21 16:23:24</sys_updated_on>
+        <type>flow</type>
+    </sys_hub_flow>
+    <sys_variable_value action="delete_multiple" query="document_key=1f1bd63013a26f4061e07f176144b08b"/>
+</record_update>

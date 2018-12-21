@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="software deployment req" max_length="40" name="x_snc_va_software_software_deployment_req" type="collection">
+        <element label="AD Group" max_length="40" name="ad_group" type="string"/>
+        <element label="Approval Required" max_length="40" name="approval_required" type="boolean"/>
+        <element label="Edition" max_length="40" name="edition" type="string"/>
+        <element label="Editor" max_length="40" name="editor" type="string"/>
+        <element label="Product Name" max_length="40" name="product_name" type="string"/>
+        <element label="Version" max_length="40" name="version" type="string"/>
+    </element>
+</database>

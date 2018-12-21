@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_hub_flow_snapshot">
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <annotation/>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <internal_name>deloitte_-_va_-_create_and__fullfil_request</internal_name>
+        <label_cache>[{"name":"Created_1.current.description","label":"Trigger➛Request Record➛Description","reference":"","reference_display":"Description","type":"string","base_type":"string","parent_table_name":"sc_request","column_name":"description"},{"name":"dbede670-2cda-4d90-a975-92099b9c888b.Catalog Task","label":"2➛Catalog Task","reference":"sc_task","reference_display":"Catalog Task","type":"document_id","base_type":"document_id"},{"name":"4692935e-a586-4593-9f12-cfcfcf2006b1.Record","label":"1➛Record","reference_display":"Record","type":"document_id","base_type":"document_id"},{"name":"4692935e-a586-4593-9f12-cfcfcf2006b1.Table","label":"1➛Table","reference_display":"Table","type":"table_name","base_type":"table_name"},{"name":"557bac07-1fec-4252-b909-0baeb4e31621.Catalog Task","label":"1➛Catalog Task","reference":"sc_task","reference_display":"Catalog Task","type":"document_id","base_type":"document_id"},{"name":"Created_1.current","label":"Trigger➛Request Record","reference":"sc_request","reference_display":"Request","type":"reference","base_type":"reference"},{"name":"35fa263f-a68d-48ed-8614-ba7b6d58b4d7.record","label":"1➛Requested Item Record","reference":"sc_req_item","reference_display":"Requested Item","type":"reference","base_type":"reference"},{"name":"35fa263f-a68d-48ed-8614-ba7b6d58b4d7.table_name","label":"1➛Requested Item Table","reference":"sc_req_item","reference_display":"Requested Item","type":"table_name","base_type":"table_name"},{"name":"Created_1.current.short_description","label":"Trigger➛Request Record➛Short description","reference":"","reference_display":"Short description","type":"string","base_type":"string","parent_table_name":"sc_request","column_name":"short_description"}]</label_cache>
+        <master>true</master>
+        <name>Deloitte - VA - Create and  fullfil request</name>
+        <outputs/>
+        <parent_flow display_value="Deloitte - VA - Create and  fullfil request">db00323813e26f4061e07f176144b03f</parent_flow>
+        <remote_trigger_id/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>quentin.carton</sys_created_by>
+        <sys_created_on>2018-12-20 22:35:50</sys_created_on>
+        <sys_id>1dc8b27013266f4061e07f176144b05f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Deloitte - VA - Create and  fullfil request</sys_name>
+        <sys_package display_value="va software deployment" source="x_snc_va_software">5048e17013ae2f4061e07f176144b005</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="va software deployment">5048e17013ae2f4061e07f176144b005</sys_scope>
+        <sys_update_name>sys_hub_flow_snapshot_1dc8b27013266f4061e07f176144b05f</sys_update_name>
+        <sys_updated_by>quentin.carton</sys_updated_by>
+        <sys_updated_on>2018-12-20 22:35:50</sys_updated_on>
+        <type>flow</type>
+    </sys_hub_flow_snapshot>
+    <sys_variable_value action="delete_multiple" query="document_key=1dc8b27013266f4061e07f176144b05f"/>
+</record_update>

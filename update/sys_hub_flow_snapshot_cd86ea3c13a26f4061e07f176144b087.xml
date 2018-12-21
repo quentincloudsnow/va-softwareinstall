@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_hub_flow_snapshot">
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <annotation/>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <internal_name>deloitte_-_add_ad_user_to_group</internal_name>
+        <label_cache>[{"name":"c27deafe-ffbe-4470-8214-b8bbc4ef9843.Error Message","label":"1➛Error Message","reference_display":"Error Message","type":"string","base_type":"string"},{"name":"61287c93-fe36-4b6f-8f20-7e2e9efda53a.Status","label":"1➛Status","reference_display":"Status","type":"choice","base_type":"choice"},{"name":"61287c93-fe36-4b6f-8f20-7e2e9efda53a.Error Message","label":"1➛Error Message","reference_display":"Error Message","type":"string","base_type":"string"},{"name":"61287c93-fe36-4b6f-8f20-7e2e9efda53a.User GUID","label":"1➛User GUID","reference_display":"User GUID","type":"string","base_type":"string"},{"name":"0df16d79-642c-4b0b-bc3a-4dc1b7554af4.Error Message","label":"1➛Error Message","reference_display":"Error Message","type":"string","base_type":"string"}]</label_cache>
+        <master>true</master>
+        <name>Deloitte - Add AD user to group</name>
+        <outputs/>
+        <parent_flow display_value="Deloitte - Add AD user to group">1f1bd63013a26f4061e07f176144b08b</parent_flow>
+        <remote_trigger_id/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>quentin.carton</sys_created_by>
+        <sys_created_on>2018-12-20 21:16:04</sys_created_on>
+        <sys_id>cd86ea3c13a26f4061e07f176144b087</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Deloitte - Add AD user to group</sys_name>
+        <sys_package display_value="va software deployment" source="x_snc_va_software">5048e17013ae2f4061e07f176144b005</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="va software deployment">5048e17013ae2f4061e07f176144b005</sys_scope>
+        <sys_update_name>sys_hub_flow_snapshot_cd86ea3c13a26f4061e07f176144b087</sys_update_name>
+        <sys_updated_by>quentin.carton</sys_updated_by>
+        <sys_updated_on>2018-12-20 21:16:04</sys_updated_on>
+        <type>flow</type>
+    </sys_hub_flow_snapshot>
+    <sys_variable_value action="delete_multiple" query="document_key=cd86ea3c13a26f4061e07f176144b087"/>
+</record_update>
